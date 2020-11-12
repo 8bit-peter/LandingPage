@@ -270,6 +270,19 @@ body {
     background-color: var(--darkGray);
 }
 
+.footer__privacyBox {
+    display: flex;
+    justify-content: center;
+}
+
+.footer__link--tm, .footer__privacyBox, .footer__link--author {
+    flex: 1 1 0px;
+}
+
+.footer__link--author {
+    text-align: right;
+}
+
 /* /footer */
 
 /* rwd */
@@ -293,6 +306,10 @@ body {
     }
     
     .footer__link:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .footer__privacyBox .footer__link {
         margin-bottom: 0;
     }
     
@@ -372,6 +389,8 @@ body {
     
     .menuOn .hamburger__bar:nth-of-type(3) {
         transform: translate(-50%, 0) rotate(-45deg);
+    }
+
 }
 
 /* /rwd */
