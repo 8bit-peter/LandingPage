@@ -44,7 +44,7 @@ body {
 }
 
 .container--fluid {
-    max-width: 1366px;
+    max-width: 2500px;
     background-image: url(img/main__bg.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -119,6 +119,22 @@ body {
 
 /* main */
 
+body.formOn {
+    position: relative;
+}
+
+body.formOn:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+
 .main {
     display: flex;
     flex-direction: column;
@@ -170,6 +186,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     padding: 40px;
+    z-index: 2;
 }
 
 .formTitle {
@@ -203,6 +220,7 @@ body {
     -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
     transition: opacity .5s;
+    pointer-events: none;
 }
 
 .msg.active {
@@ -275,7 +293,7 @@ body {
     justify-content: center;
 }
 
-.footer__link--tm, .footer__privacyBox, .footer__link--author {
+.footer__privacyBox, .footer__linkBox {
     flex: 1 1 0px;
 }
 
@@ -283,11 +301,25 @@ body {
     text-align: right;
 }
 
+.footer__linkBox:last-of-type {
+    display: flex;
+    justify-content: flex-end;
+}
+
 /* /footer */
 
 /* rwd */
 
 @media(max-width: 700px) {
+
+    .main {
+        margin-top: 115px;
+        margin-bottom: 120px;
+    }
+
+    .hero__title {
+        font-size: 50px;
+    }
 
     .logo {
         max-width: 60px;
@@ -301,7 +333,7 @@ body {
         align-items: center;
     }
     
-    .footer__link, .footer__privacyBox {
+    .footer__linkBox, .footer__privacyBox {
         margin-bottom: 10px;
     }
     
