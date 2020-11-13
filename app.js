@@ -10,6 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.add("formOn");
     })
 
+    // form close
+    window.addEventListener("click", (e) => {
+        if(e.target.classList.contains("formOn")) {
+            loginForm.classList.remove("active");
+            body.classList.remove("formOn");
+        }
+    })
+
     // submit
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
